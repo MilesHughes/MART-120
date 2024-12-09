@@ -1,0 +1,76 @@
+<html>  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Contact Us</title>  
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">  
+
+    <script>  
+        function checkboxes(event) {  
+            var firstName = document.getElementById("firstName").value;  
+            var lastName = document.getElementById("lastName").value;  
+            var email = document.getElementById("email").value;  
+            var agreement = document.querySelector('input[name="agreement"]:checked');    
+
+            if (firstName == "") {  
+                document.getElementById("firstName").focus();  
+                document.getElementById("firstName").style.backgroundColor = "red";  
+                document.getElementById("fNameMessage").innerHTML = "* This is Required";  
+                document.getElementById("fNameMessage").style.color = "red";  
+                event.preventDefault();  
+                return false;  
+            }  
+
+            if (lastName == "") {  
+                document.getElementById("lastName").focus();  
+                document.getElementById("lastName").style.backgroundColor = "red";  
+                document.getElementById("lNameMessage").innerHTML = "* This is Required";  
+                document.getElementById("lNameMessage").style.color = "red";  
+                event.preventDefault();  
+                return false;  
+            }  
+
+            if (email == "") {  
+                document.getElementById("email").focus();  
+                document.getElementById("email").style.backgroundColor = "red";  
+                document.getElementById("emailMessage").innerHTML = "* This is Required";  
+                document.getElementById("emailMessage").style.color = "red";  
+                event.preventDefault();  
+                return false;  
+            }  
+
+            if (!agreement) {  
+                document.getElementById("agreementMessage").innerHTML = "* You must do the terms of agreement";  
+                document.getElementById("agreementMessage").style.color = "red";  
+                event.preventDefault();  
+                return false;  
+            }  
+        }  
+    </script>  
+</head>  
+<body>  
+    <h1>Contact Us</h1>  
+    
+    <form action="" onsubmit="checkboxes(event);">  
+        <p>First Name: <input type="text" id="firstName"></p>  
+        <p id="fNameMessage"></p>  
+        
+        <p>Last Name: <input type="text" id="lastName"></p>  
+        <p id="lNameMessage"></p>  
+        
+        <p>Email address: <input type="text" id="email"></p>  
+        <p id="emailMessage"></p>  
+        
+        <h3>Do you accept terms of agreement</h3>  
+        <input type="radio" name="agreement" value="yes"> Yes<br>  
+        <input type="radio" name="agreement" value="no"> No<br>  
+        <p id="agreementMessage"></p>  
+        <br>  
+    
+        <button type="submit" class="btn btn-primary">Submit My Info</button>  
+    </form>  
+    <p><a href="Homepage.html">Home Page</a></p>  
+    <p><a href="secondpage.html">Summary</a></p>
+    <p><a href="portfolio page.html">Portfolio</a></body></p>  
+</body>  
+</html>  
